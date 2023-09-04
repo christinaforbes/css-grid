@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!-- Christina Forbes 4/5/2021 -->
+<html lang="en">
+  <head>
+    <title>CSS Grid</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="css/module.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap" rel="stylesheet"> 
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__content heading heading_size_large"><a href="#top" class="header__link">CSS Grid</a></h1>
+    </header>
+
+    <nav class="nav">
+      <button class="nav__button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+          <g>
+            <title>Menu</title>
+            <line x1="5" y1="5" x2="25" y2="5" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+            <line x1="5" y1="15" x2="25" y2="15" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+            <line x1="5" y1="25" x2="25" y2="25" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </button>
+
+      <ul class="nav__menu menu">
+        <li class="nav__item"><a href="#introduction" class="nav__link menu__link">Introduction</a></li>
+        <li class="nav__item"><a href="#terminology" class="nav__link menu__link">Terminology</a></li>
+        <li class="nav__item"><a href="#properties" class="nav__link menu__link">Properties</a></li>
+        <li class="nav__item"><a href="#resources" class="nav__link menu__link">Resources</a></li>
+      </ul>
+    </nav>
+
+    <main id="top">
+      <div class="page-container">
+        <article class="article" id="introduction">
+          <h2 class="heading heading_size_medium">What is Grid?</h2>
+
+          <img src="images/grid-diagram-small.png" srcset="images/grid-diagram-small.png 400w, images/grid-diagram-medium.png 700w, images/grid-diagram-large.png 1000w" sizes="100vw" alt="diagram of a simple grid layout of a web page" class="img">
+
+          <p>Grid is a method to arrange web page elements in two dimensions.</p>
+
+          <div class="columns-container">
+            <section>
+              <h3 class="heading heading_size_small">Advantages over Alternatives</h3>
+              <p>Before Grid was added to CSS, web developers had to lay out pages using other techniques, including tables and floats. However, these are not the best approaches. Using HTML tables is not semantically correct since it uses HTML elements to style pages instead of using CSS. Conversely, using floats is also problematic as floats were intended for positioning images on a page and allowing text to flow around them. As a result, using floats for page layout is challenging due to their number of quirks. Grid provides an easier way to style pages while keeping the HTML and CSS separate.</p>
+            </section>
+
+            <section>
+              <h3 class="heading heading_size_small">Grid versus Flexbox</h3>
+              <p>In addition to Grid, there is also Flexbox for layout. Flexbox is a one-dimensional layout system, whereas Grid is a two-dimensional layout system. Moreover, Grid is based on the layout that the content is then placed into, while Flexbox is based on the content that then determines the layout. As a result, Grid is more suitable for larger sections of pages and Flexbox is more suitable for smaller sections of pages.</p>
+            </section>
+
+            <section>
+              <h3 class="heading heading_size_small">Browser Support</h3>
+              <p>Currently, Grid is supported by most major browsers. However, Internet Explorer only supports an older version of Grid using a prefix, and Opera Mini does not support it.</p>
+            </section>
+          </div>
+        </article>
+
+        <div class="button-container">
+          <a href="#top" class="button link-button">Back to Top</a>
+        </div>
+
+        <article class="article" id="terminology">
+          <h2 class="heading heading_size_medium">Grid Terminology</h2>
+
+          <img src="images/grid-terminology-diagram-small.png" srcset="images/grid-terminology-diagram-small.png 400w, images/grid-terminology-diagram-medium.png 700w, images/grid-terminology-diagram-large.png 1000w" sizes="100vw" alt="diagram displaying the components of CSS Grid" class="img">
+
+          <dl>
+            <dt>Grid Container</dt>
+            <dd>A grid container is an element the declaration <code>display: grid;</code> is added to.</dd>
+
+            <dt>Grid Item</dt>
+            <dd>A grid item is a direct descendant element of a grid container.</dd>
+
+            <dt>Grid Line</dt>
+            <dd>A grid line is one of a number of horizontal or vertical lines that intersect to produce the grid.</dd>
+
+            <dt>Grid Track</dt>
+            <dd>A grid track is the area between two parallel grid lines. A grid track constitutes a row or column of the grid.</dd>
+
+            <dt>Grid Cell</dt>
+            <dd>A grid cell is the area where a horizontal grid track and a vertical grid track overlap.</dd>
+
+            <dt>Grid Area</dt>
+            <dd>A grid area is a rectangular area containing at least one grid cell.</dd>
+
+            <dt>Grid Gap</dt>
+            <dd>A grid gap is the empty space between two parallel grid tracks.</dd>
+
+            <dt>Explicit Grid</dt>
+            <dd>An explicit grid is the portion of a grid manually defined in the CSS using the <code>grid-template-rows</code> and <code>grid-template-columns</code> properties.</dd>
+
+            <dt>Implicit Grid</dt>
+            <dd>An implicit grid is the portion of a grid automatically generated to fit all the grid items in the grid.</dd>
+          </dl>
+        </article>
+
+        <div class="button-container">
+          <a href="#top" class="button link-button">Back to Top</a>
+        </div>
+
+        <article class="article" id="properties">
+          <h2 class="heading heading_size_medium">Grid Properties</h2>
+
+          <img src="images/grid-code-example-small.png" srcset="images/grid-code-example-small.png 400w, images/grid-code-example-medium.png 700w, images/grid-code-example-large.png 850w" sizes="100vw" alt="screenshot of a code example of a simple CSS Grid layout" class="img">
+
+          <div class="columns-container">
+            <section>
+              <h3 class="heading heading_size_small">Creating a Grid</h3>
+              <p>To create a grid, first create a grid container by adding the declaration <code>display: grid;</code> to the parent element of the elements to be placed in the grid.</p>
+              <p>Then, create the rows and columns of the grid using the <code>grid-template-rows</code> and <code>grid-template-columns</code> properties. These properties are used to set the number of rows and columns and the sizes of those rows and columns. The size can use any length unit (such as pixels or ems), a percentage, or the fr unit. The fr unit is a unit exclusive to Grid equal to a fraction of the remaining space in the grid.</p>
+              <p>Note, though, that using the <code>grid-template-rows</code> and <code>grid-template-columns</code> properties to create the rows and columns is not required, since the grid will generate rows and columns as needed to fit the items placed in it.</p>
+              <p>If a gap between the rows or columns is desired, use the <code>row-gap</code> and <code>column-gap</code> properties to specify the width of the gap. Alternatively, use the shorthand property, <code>gap</code>, to define the row gap and column gap in the same declaration.</p>
+            </section>
+
+            <section>
+              <h3 class="heading heading_size_small">Placing Items in the Grid</h3>
+              <p>Once the grid is set up, place elements in the grid by using the <code>grid-row-start</code>, <code>grid-row-end</code>, <code>grid-column-start</code>, and <code>grid-column-end</code> properties to specify the starting grid line number and ending grid line number of the row and column, respectively. The shorthand properties, <code>grid-row</code> and <code>grid-column</code>, can also be used to define the starting grid line number and ending grid line number in the same declaration, separated by a forward slash.</p>
+            </section>
+
+            <section>
+              <h3 class="heading heading_size_small">Aligning Items in the Grid</h3>
+              <p>Furthermore, it is possible to align items in the grid with the <code>justify-items</code>, <code>justify-content</code>, <code>justify-self</code>, <code>align-items</code>, <code>align-content</code>, and <code>align-self</code> properties.</p>
+              <p>The <code>justify-items</code> and <code>align-items</code> properties align grid items in their grid cells, the <code>justify-content</code> and <code>align-content</code> properties align the grid in its grid container if there is empty space, and the <code>justify-self</code> and <code>align-self</code> properties align an individual grid item in its grid cell.</p>
+              <p>The difference between the <code>justify-*</code> and the <code>align-*</code> properties is that the <code>justify-*</code> properties position items along the horizontal axis, whereas the <code>align-*</code> properties position items along the vertical axis.</p>
+            </section>
+          </div>
+        </article>
+
+        <div class="button-container">
+          <a href="#top" class="button link-button">Back to Top</a>
+        </div>
+
+        <article class="article" id="resources">
+          <h2 class="heading heading_size_medium">Grid Resources</h2>
+
+          <p>Although this was a brief overview of Grid, there are numerous online resources with additional information. Three websites for learning Grid are Grid Garden, CSS Grid PlayGround, and Grid by Example.</p>
+
+          <div class="columns-container">
+            <section>
+              <h3 class="heading heading_size_small">Grid Garden</h3>
+              <img src="images/grid-garden-small.png" srcset="images/grid-garden-small.png 400w, images/grid-garden-medium.png 700w, images/grid-garden-large.png 1000w" sizes="100vw" alt="screenshot of Grid Garden" class="img img_width_full">
+              <p>The first resource is <a href="https://cssgridgarden.com" target="_blank">Grid Garden</a>. Grid Garden is a game by Codepip that teaches Grid. The player is introduced to a concept and then must write CSS code to tend to a carrot garden. The game has twenty-eight levels and covers various properties, including <code>grid-column-start</code>, <code>grid-column-end</code>, <code>grid-column</code>, <code>grid-row-start</code>, <code>grid-row</code>, <code>grid-area</code>, <code>order</code>, <code>grid-template-columns</code>, <code>grid-template-rows</code>, and <code>grid-template</code>.</p>
+            </section>
+
+            <section>
+              <h3 class="heading heading_size_small">CSS Grid PlayGround</h3>
+              <img src="images/css-grid-playground-small.png" srcset="images/css-grid-playground-small.png 400w, images/css-grid-playground-medium.png 700w, images/css-grid-playground-large.png 1000w" sizes="100vw" alt="screenshot of CSS Grid PlayGround" class="img img_width_full">
+              <p>Another informative website is <a href="https://mozilladevelopers.github.io/playground/css-grid/" target="_blank">CSS Grid PlayGround</a>. CSS Grid PlayGround is part of the Firefox DevTools PlayGround by Mozilla. It is a tutorial on Grid and is divided into sections. There is an emphasis on using the Firefox DevTools, which have specific features for working with a grid layout, such as displaying the grid lines, the grid line numbers, and the grid area names. The tutorial consists of Grid terminology, creating a grid, the Firefox DevTools, the fr unit, mixing units, placing items in a grid, designing a basic layout using Grid, creating named template areas, and creating named lines.</p>
+            </section>
+
+            <section>
+              <h3 class="heading heading_size_small">Grid by Example</h3>
+              <img src="images/grid-by-example-small.png" srcset="images/grid-by-example-small.png 400w, images/grid-by-example-medium.png 700w, images/grid-by-example-large.png 1000w" sizes="100vw" alt="screenshot of Grid by Example" class="img img_width_full">
+              <p>Finally, there is <a href="https://gridbyexample.com" target="_blank">Grid by Example</a>. Grid by Example is a resource on Grid created by Rachel Andrew. It contains examples, videos, and links to other resources. The examples begin with a brief explanation and are followed by code demonstrating a particular concept. The videos are short tutorials on various aspects of Grid.</p>
+            </section>
+          </div>
+        </article>
+
+        <div class="button-container">
+          <a href="#top" class="button link-button">Back to Top</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <article>
+        <h2 class="heading heading_size_small">Works Cited</h2>
+        <p class="footer__text">Andrew, Rachel. <i>Grid by Example</i>. <a href="https://gridbyexample.com" target="_blank" class="footer__link">gridbyexample.com</a>. Accessed 5 Mar. 2021.</p>
+        <p class="footer__text">"Basic Concepts of Grid Layout." <i>MDN Web Docs</i>, Mozilla, 19 Feb. 2021, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" target="_blank" class="footer__link">developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout</a>. Accessed 3 Mar. 2021.</p>
+        <p class="footer__text">"CSS Grid Layout (Level 1)." <i>Can I Use</i>, <a href="https://caniuse.com/css-grid" target="_blank" class="footer__link">caniuse.com/css-grid</a>. Accessed 4 Mar. 2021.</p>
+        <p class="footer__text">"CSS Grid PlayGround." <i>Firefox DevTools PlayGround</i>, Mozilla, <a href="https://mozilladevelopers.github.io/playground/css-grid/" target="_blank" class="footer__link">mozilladevelopers.github.io/playground/css-grid</a>. Accessed 5 Mar. 2021.</p>
+        <p class="footer__text"><i>Grid Garden</i>. Codepip, <a href="https://cssgridgarden.com" target="_blank" class="footer__link">cssgridgarden.com</a>. Accessed 5 Mar. 2021.</p>
+        <p class="footer__text">House, Chris. "A Complete Guide to Grid." <i>CSS-Tricks</i>, 7 July 2020, <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank" class="footer__link">css-tricks.com/snippets/css/complete-guide-grid</a>. Accessed 3 Mar. 2021.</p>
+        <p class="footer__text">Williams, Shaira. "The Main Differences Between Flexbox and CSS Grid." <i>freeCodeCamp</i>, 14 Mar. 2019, <a href="https://www.freecodecamp.org/news/the-main-differences-between-flexbox-and-css-grid-667c03461d2b/" target="_blank" class="footer__link">www.freecodecamp.org/news/the-main-differences-between-flexbox-and-css-grid-667c03461d2b</a>. Accessed 3 Mar. 2021.</p>
+      </article>
+
+      <p class="footer__text footer__text_weight_bold footer__text_align_center">Created by Christina Forbes</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
